@@ -15,17 +15,6 @@ from pygame.locals import *
 from subprocess import call  
 
 
-# UI classes ---------------------------------------------------------------
-
-# Small resistive touchscreen is best suited to simple tap interactions.
-# Importing a big widget library seemed a bit overkill.  Instead, a couple
-# of rudimentary classes are sufficient for the UI elements:
-
-# Icon is a very simple bitmap class, just associates a name and a pygame
-# image (PNG loaded from icons directory) for each.
-# There isn't a globally-declared fixed list of Icons.  Instead, the list
-# is populated at runtime from the contents of the 'icons' directory.
-
 class Icon:
 
 	def __init__(self, name):
@@ -37,8 +26,7 @@ class Icon:
 
 
 # UI callbacks -------------------------------------------------------------
-# These are defined before globals because they're referenced by items in
-# the global buttons[] list.
+
 
 def isoCallback(n): # Pass 1 (next ISO) or -1 (prev ISO)
 	global isoMode
